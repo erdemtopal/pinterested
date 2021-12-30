@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pinterested</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicon.ico'%>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'home/header' %>
+    <div class="container">
+    <% flash.each do |name, msg| %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+           <%= content_tag(:div, msg)%>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     <% end %>
+    </div>
+    </div>
+    
+    <div class="container">
+        <%= yield %>
+    </div>
+
+  
+  </body>
+</html>
+
+
+

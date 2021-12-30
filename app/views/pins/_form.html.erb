@@ -1,0 +1,22 @@
+<%= form_with(model: pin) do |form| %>
+  <% if pin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
+
+      <ul>
+        <% pin.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :description, class:"form-label" %>
+    <%= form.text_field :description, class:"form-control"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Submit', class:"btn btn-primary" %>
+  </div>
+<% end %>
