@@ -3,6 +3,13 @@
   <strong>Description:</strong>
   <%= @pin.description %>
 </p>
+<p>
+  <strong>Pin Photo:</strong>
+  <%if @pin.pinfoto.attached? %>
+  <%= image_tag @pin.pinfoto %>
+  <%end%>
+</p>
+
 
 <%= link_to 'Edit', edit_pin_path(@pin) %> |
 <%= link_to 'Back', pins_path %>

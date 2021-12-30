@@ -15,6 +15,10 @@
     <%= form.label :description, class:"form-label" %>
     <%= form.text_field :description, class:"form-control"%>
   </div>
+  <div class="mb-3">
+    <%= form.label :Photo, class:"form-label" %>
+    <%= form.file_field :pinfoto, class:"form-control"%>
+  </div>
 
   <div class="actions">
     <%= form.submit 'Submit', class:"btn btn-primary" %>
