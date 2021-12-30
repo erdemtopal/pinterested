@@ -14,8 +14,8 @@
       <tr>
         <td><%= pin.description %></td>
         <td><%= pin.user_id %></td>
-        <td><%if @pin.pinfoto.attached? %>
-              <%= image_tag @pin.pinfoto %>
+        <td><%if pin.pinfoto.attached? %>
+              <%= image_tag pin.pinfoto %>
             <%end%>
         </td>
         <td><%= link_to 'Show', pin %></td>
