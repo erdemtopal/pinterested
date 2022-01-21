@@ -1,15 +1,21 @@
-
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
-<p>
-  <strong>Pin Photo:</strong>
+<div class="container col-md-12 col-lg-6 ">
+  <div class="card">
   <%if @pin.pinfoto.attached? %>
-  <%= image_tag @pin.pinfoto %>
+  <%= image_tag @pin.pinfoto, class:""%>
   <%end%>
-</p>
-
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @pin.user.username %></h5>
+    <p class="card-text"><%= @pin.description %></p>
+    <p><em><small><%= @pin.created_at.strftime("Posted on %B %d, %Y at %H:%M")%></small></em></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <%= link_to 'Back', pins_path %> 
+    <%if @pin.user == current_user%>
+      | <%= link_to 'Edit', edit_pin_path(@pin) %> | <%= link_to 'Delete', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%>
+    </li>
+  
+  </ul>
+</div>
+</div>

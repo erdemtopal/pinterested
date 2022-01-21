@@ -1,25 +1,25 @@
 
+<%= render 'home/jumbo' unless user_signed_in? %>
+<div class="row g-2 mt-1">
 <% @pins.each do |pin| %>
-
-<div class="card" style="width: 20rem;">
+<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+<div class="card h-100">
   <%if pin.pinfoto.attached? %>
-  <%= image_tag pin.pinfoto, class:"card-img-top"%>
+  <%= link_to image_tag(pin.pinfoto, class:"card-img-top"), pin%>
   <%end%>
   <div class="card-body">
+    <h6 class="card-title"><%= pin.user.username %></h6>
     <p class="card-text"><%= pin.description %></p>
-    <%= link_to 'Show', pin %>
-    <%= link_to 'Edit', edit_pin_path(pin) %>
-    <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <p><em><small><%= pin.user.created_at.strftime("%B %d, %Y at %H:%M")%></small></em></p>
   </div>
+</div>
 </div>
 <% end %>
 
-<br>
-
-<%= link_to 'New Pin', new_pin_path %>
+</div>
 
 
-      
-        
-        
- 
+<br/>
+<div class="d-flex justify-content-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

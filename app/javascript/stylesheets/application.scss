@@ -1,1 +1,16 @@
 @import "bootstrap";
+
+.card-img-top{
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.navbar{
+  height: 45px;
+}
+@navbar-height: 40px;
+
+body{
+background-color: #e9e9e9;
+}

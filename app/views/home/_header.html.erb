@@ -15,10 +15,10 @@
         </li>
    <% if user_signed_in?%>
         <li class="nav-item">
-          <%=link_to 'Add Pin', new_pin_path, class:'nav-link fw-bold'%>
+          <%=link_to 'List Pins', pins_path, class:'nav-link fw-bold'%>
         </li>
         <li class="nav-item">
-          <%=link_to 'List Pins', pins_path, class:'nav-link fw-bold'%>
+          <%=link_to 'Add Pin', new_pin_path, class:'nav-link fw-bold text-danger'%>
         </li>
         <li class="nav-item">
           <%=link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary btn-sm m-1'%>
